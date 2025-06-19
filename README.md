@@ -257,3 +257,25 @@ To protect your privacy, please avoid posting security issues on GitHub. Instead
 ## License
 
 This repository is available under the [Dify Open Source License](LICENSE), which is essentially Apache 2.0 with a few additional restrictions.
+Upgrade Guide
+Docker Compose Deployments
+Back up your customized docker-compose YAML file (optional)
+
+cd docker
+cp docker-compose.yaml docker-compose.yaml.$(date +%s).bak
+Get the latest code from the main branch
+
+git checkout main
+git pull origin main
+Stop the service. Please execute in the docker directory
+
+docker compose down
+Back up data
+
+tar -cvf volumes-$(date +%s).tgz volumes
+Upgrade services
+
+docker compose up -d
+
+git checkout new-main 
+git pull origin new-main
