@@ -279,3 +279,4 @@ docker compose up -d
 
 git checkout new-main 
 git pull origin new-main
+git push origin new-main
